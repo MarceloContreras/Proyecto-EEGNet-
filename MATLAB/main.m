@@ -16,7 +16,7 @@ samples=2500;
 segment=500; 
 overlap=100; 
 
-%% Directorio base 
+%% Directorio base a elegir 
 
 global localdir
 
