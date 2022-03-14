@@ -49,15 +49,10 @@ orden=7;
 
 method = 1;
 
-% makeImagedir(method);
-% makeImageRGB(method);
+makeImagedir(method);
+makeImageRGB(method);
 
-a = imread('suj1rep1chn1.jpeg');
-b = imread('suj1rep1chn12.jpeg'); 
-result = all(size(a) == size(b));
-if result
-    result = all(reshape(a,[],1)== reshape(b,[],1));
-end
+
 
 
 
