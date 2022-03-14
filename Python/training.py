@@ -1,5 +1,6 @@
 import os 
 import numpy as np
+from model import *
 from sklearn.model_selection import KFold,RepeatedKFold
 from keras.preprocessing.image import ImageDataGenerator
 import tensorflow as tf
