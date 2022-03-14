@@ -17,6 +17,15 @@ from tensorflow.keras.layers import Dense,\
                                     Flatten
 
 def print_subject_results(loss_per_fold,acc_per_fold,repetitions):
+    """
+    Imprime los accuracy conseguido en cada Fold y calcula el acc y loss promedio de los folds de cada run
+    
+    Argumentos: Vector de loss dim(folds * repeticiones)
+                Vector de accuracy 
+    Output: Acc promedio final
+            Std promedio final
+    """
+    
     # -- Averages scores 
     promedio_final = []
     print('------------------')
@@ -37,6 +46,18 @@ def print_subject_results(loss_per_fold,acc_per_fold,repetitions):
 
 
 def Kcross_validation(num_class,inputs,targets,repetitions):
+    """
+    Aplica Repeated K-cross validation considerando la repeticiones deseadas
+    
+    Argumentos: num_class
+                inputs(imagenes)
+                targets(clases)
+                repetitions
+                
+    Output: Acc promedio final
+            Std promedio final
+    """
+    
     # Per-fold score containers 
     acc_per_fold = []
     loss_per_fold = []

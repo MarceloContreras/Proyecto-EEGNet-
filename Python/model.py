@@ -11,6 +11,12 @@ from tensorflow.keras.layers import Dense,\
                                     Dropout,\
                                     Flatten
 def EEGNet_model(num_class):
+    """
+    Construye una EEGNet utilizando Tensorflow de forma secuencial.
+    
+    Argumentos: num_class
+    Output: EEGNet como modelo de Tensorflow.keras
+    """
     
     EEGNet = tf.keras.Sequential()
 
@@ -58,6 +64,12 @@ def EEGNet_model(num_class):
 
 
 def get_compile(model: tf.keras.Model):
+    """
+    Compila el modelo con un optimizador Adam (lr = 0.001), loss categorico y como metrica el accuracy
+    
+    Argumentos: CNN como modelo
+    Output: Modelo compilado
+    """
     model.compile(optimizer=optimizers.Adam(learning_rate=0.001),
                    loss='sparse_categorical_crossentropy',
                    metrics=['acc'])
@@ -66,7 +78,13 @@ def get_compile(model: tf.keras.Model):
 
 
 def get_EEGNet(num_class):
+    """
+    Crea y compila una EEGNet lista para entrenarla y clasificar. Se adapta según la 
+    cantidad de clases
     
+    Argumentos: num_class
+    Output: modelo listo 
+    """
     model = EEGNet_model(num_class)
     model = get_compile(model)
     

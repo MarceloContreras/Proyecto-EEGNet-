@@ -3,6 +3,14 @@ import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 
 def get_dataset(dir_task,num_class):
+    """
+    Construye el dataset a partir de la direccion de carpetas y la cantidad de clases
+    a clasificar.
+    
+    Argumentos: dir_task(Direccion de carpetas) y num_class(cantidad de clases)
+    Output: inputs(imagenes) y targets(vector de clases) 
+    """
+    
     type_class = 'binary'
     if (num_class != 2):
         type_class = 'sparse'
