@@ -9,8 +9,8 @@ function makeImageRGB(method)
     
     global Fs
     
-    for subject = 1:2
-        for task = 1:2
+    for subject = 1:4
+        for task = 1:5
             if subject == 2
                for rep = 1:5 % El sujeto 2 solo tiene 5 repeticiones
                     x = preprocessing(subject,task,rep);
