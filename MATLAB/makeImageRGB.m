@@ -19,7 +19,7 @@ function makeImageRGB(method)
                     for chn=1:6
                         cfs = wsst(y(:,:,chn),Fs,'bump','VoicesPerOctave',12); % Transformada T-F seleccionada
                         im = ind2rgb(im2uint8(rescale(abs(cfs))),jet(128)); % Paleta RGB seleccionada
-                        dirImage(im,subject,method,task,rep,chn)
+                        dirImage(im,subject,method,task,rep,chn) %% Esta funcion debe cambiarse para aceptar Testing o Training
                     end
                end
             else

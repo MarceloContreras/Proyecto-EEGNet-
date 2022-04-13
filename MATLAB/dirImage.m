@@ -10,15 +10,17 @@ function dirImage(im,subject,method,task,rep,chn)
    
    switch task
        case 1
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Baseline','\suj',num2str(subject),'rep',num2str(rep),'chn',num2str(chn),'.jpeg'];
+          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Baseline','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'.jpeg'];
        case 2
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Mult','\suj',num2str(subject),'rep',num2str(rep),'chn',num2str(chn),'.jpeg'];
+          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Mult','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'.jpeg'];
        case 3
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Letter','\suj',num2str(subject),'rep',num2str(rep),'chn',num2str(chn),'.jpeg'];
+          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Letter','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'.jpeg'];
        case 4
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Rotation','\suj',num2str(subject),'rep',num2str(rep),'chn',num2str(chn),'.jpeg'];
+          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Rotation','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'.jpeg'];
        case 5
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Counting','\suj',num2str(subject),'rep',num2str(rep),'chn',num2str(chn),'.jpeg'];
+          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Counting','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'.jpeg'];
    end     
    imwrite(imresize(im,[128 128]),str);
 end
+
+
