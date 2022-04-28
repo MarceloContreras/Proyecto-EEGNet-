@@ -10,16 +10,16 @@ function dirAugImage(im,subject,method,task,rep,chn,mode)
    
    switch task
        case 1
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Baseline','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'m',num2str(mode),'.jpeg'];
+          task_str = ['\Baseline'];
        case 2
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Mult','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'m',num2str(mode),'.jpeg'];
+          task_str = ['\Mult'];
        case 3
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Letter','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'m',num2str(mode),'.jpeg'];
+          task_str = ['\Letter'];
        case 4
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Rotation','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'m',num2str(mode),'.jpeg'];
+          task_str = ['\Rotation'];
        case 5
-          str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),'\Counting','\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'m',num2str(mode),'.jpeg'];
+          task_str = ['\Counting'];
    end
-   %Hola
+   str = [localdir,'\Metodo_',num2str(method),'\sujeto',num2str(subject),task_str,'\suj',num2str(subject),'chn',num2str(chn),'rep',num2str(rep),'m',num2str(mode),'.jpeg'];
    imwrite(imresize(im,[128 128]),str);
 end
