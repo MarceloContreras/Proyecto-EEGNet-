@@ -12,27 +12,19 @@ function makeImageRGB(method)
     for subject = 1:4
         for task = 1:5
             if subject == 2
-               for rep = 1:5 % El sujeto 2 solo tiene 5 repeticiones
-                    x = preprocessing(subject,task,rep);
-                    [modes, u_hat, omega] = MVMD_new(x, 2000, 0, 4, 0, 1, 1e-7); %Decomposicion multi canal
-                    y = sum(modes,1); % Suma de modos(IMFs) eliminando el residual
-                    for chn=1:6
-                        cfs = wsst(y(:,:,chn),Fs,'bump','VoicesPerOctave',12); % Transformada T-F seleccionada
-                        im = ind2rgb(im2uint8(rescale(abs(cfs))),jet(128)); % Paleta RGB seleccionada
-                        dirImage(im,subject,method,task,rep,chn) %% Esta funcion debe cambiarse para aceptar Testing o Training
-                    end
-               end
+               rep_i = 1:5;
             else
-                for rep = 1:10 % Los demás sujetos (1,3,4) tienen 10 repeticiones
-                    x = preprocessing(subject,task,rep);
-                    [modes, u_hat, omega] = MVMD_new(x, 2000, 0, 4, 0, 1, 1e-7);
-                    y = sum(modes,1);
-                    for chn=1:6
-                        cfs =wsst(y(:,:,chn),Fs,'bump','VoicesPerOctave',12);
-                        im = ind2rgb(im2uint8(rescale(abs(cfs))),jet(128));
-                        dirImage(im,subject,method,task,rep,chn)
-                    end
-               end  
+               rep_i = 1:10;
+            end 
+            for rep = 1:5 % El sujeto 2 solo tiene 5 repeticiones
+                x = preprocessing(subject,task,rep);
+                [modes, u_hat, omega] = MVMD_new(x, 2000, 0, 4, 0, 1, 1e-7); %Decomposicion multi canal
+                y = sum(modes,1); % Suma de modos(IMFs) eliminando el residual
+                for chn=1:6
+                    cfs = wsst(y(:,:,chn),Fs,'bump','VoicesPerOctave',12); % Transformada T-F seleccionada
+                    im = ind2rgb(im2uint8(rescale(abs(cfs))),jet(128)); % Paleta RGB seleccionada
+                    dirImage(im,subject,method,task,rep,chn) %% Esta funcion debe cambiarse para aceptar Testing o Training
+                end
             end
         end
     end

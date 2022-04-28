@@ -1,9 +1,11 @@
 function dirAugImage(im,subject,method,task,rep,chn,mode)
 %dirImage: Obtiene la dirección necesaria para crear una imagen según su
-%sujeto, metodo, tarea y repetición para con ella crear la imagen en
-%formato .jgp con dimension 128 x 128 
+%sujeto, metodo, tarea, repetición y modo para con ella crear la imagen en
+%formato .jgp con dimension 128 x 128. Utiliza los residuos de cada modo
+%para hacer data augmentation 
 %
-%   Parametros: im(matriz tiempo-frecuencia de la transformada utilizada Ex.STFT,CWT,S-transform),sujeto,metodo,tarea y repetición
+%   Parametros: im(matriz TF por SSWT),sujeto,metodo,tarea,repetición y
+%   modo
 %   Output: ninguno 
 
    global localdir 
