@@ -47,10 +47,8 @@ orden=7;
 
 %% MVMD, transformada y generación de imagenes 
 
-method = 7;
-
-makeImagedir(method);
-makeImageRGB(method);
+make_dir(0);
+get_dataset_VMD(0);
 
 
 

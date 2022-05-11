@@ -1,4 +1,4 @@
-function makeImagedir(method)
+function make_dir(method)
 %makeImagedir: Crea las carpetas necesarios para realizar pruebas en CNN.
 %Presenta la siguiente estructura:
 %   \local dir

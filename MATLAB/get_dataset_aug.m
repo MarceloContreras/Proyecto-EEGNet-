@@ -1,6 +1,6 @@
-function makeImageRGBaugmentation(method)
-%makeImageRGB: accede a la data necesaria de cada sample y canal,
-%preprocesa la señal, obtiene el residuo de cada modo, aplica la transformada T-F elegida, utiliza una
+function get_dataset_aug(method)
+%Accede a la data necesaria de cada sample y canal,
+%preprocesa la señal, aplica MVMD, obtiene el residuo de cada modo, aplica la transformada T-F elegida, utiliza una
 %paleta RGB y crea las imagenes. En total se crean 600 muestras (10 repeticiones x 6 canales x 2 tareas x (4 modos + Señal completa))
 %de imagenes 128 x 128 x 3
 %

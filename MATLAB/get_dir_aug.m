@@ -1,5 +1,5 @@
-function dirAugImage(im,subject,method,task,rep,chn,mode)
-%dirImage: Obtiene la dirección necesaria para crear una imagen según su
+function get_dir_aug(im,subject,method,task,rep,chn,mode)
+%Obtiene la dirección necesaria para crear una imagen según su
 %sujeto, metodo, tarea, repetición y modo para con ella crear la imagen en
 %formato .jgp con dimension 128 x 128. Utiliza los residuos de cada modo
 %para hacer data augmentation 

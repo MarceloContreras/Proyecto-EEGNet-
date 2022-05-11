@@ -1,6 +1,6 @@
-function makeImageRGB(method)
-%makeImageRGB: accede a la data necesaria de cada sample y canal,
-%preprocesa la señal, aplica la transformada T-F elegida, utiliza una
+function get_dataset(method)
+%Accede a la data necesaria de cada sample y canal,
+%preprocesa la señal, aplica MVMD,aplica la transformada T-F elegida, utiliza una
 %paleta RGB y crea las imagenes. En total se crean 120 muestras (10 repeticiones x 6 canales x 2 tareas)
 %de imagenes 128 x 128 x 3
 %
@@ -16,7 +16,7 @@ function makeImageRGB(method)
             else
                rep_i = 1:10;
             end 
-            for rep = 1:5 % El sujeto 2 solo tiene 5 repeticiones
+            for rep = rep_i  % El sujeto 2 solo tiene 5 repeticiones
                 x = preprocessing(subject,task,rep);
                 [modes, u_hat, omega] = MVMD_new(x, 2000, 0, 4, 0, 1, 1e-7); %Decomposicion multi canal
                 y = sum(modes,1); % Suma de modos(IMFs) eliminando el residual
