@@ -47,8 +47,8 @@ orden=7;
 
 %% MVMD, transformada y generación de imagenes 
 
-make_dir(0);
-get_dataset_VMD(0);
+make_dir(1);
+get_dataset_VMD(1);
 
 
 

@@ -10,8 +10,8 @@ function get_dataset_VMD(method)
 
  global Fs
     
-    for subject = 4
-        for task = 4:5
+    for subject = 1:4
+        for task = 1:5
             
             if subject == 2
                rep_i = 1:5;
@@ -22,8 +22,8 @@ function get_dataset_VMD(method)
             for rep = rep_i % El sujeto 2 solo tiene 5 repeticiones
                 x = preprocessing(subject,task,rep);
                 for chn=1:6
-                    segments = reshape(x(chn,:),250,[]);
-                    for seg = 1:10
+                    segments = reshape(x(chn,:),500,[]);
+                    for seg = 1:5
                         modes = vmd(segments(:,seg),"NumIMFs",4);
                         y = sum(modes,2);
                         cfs = wsst(y,Fs,'bump','VoicesPerOctave',12); % Transformada T-F seleccionada
