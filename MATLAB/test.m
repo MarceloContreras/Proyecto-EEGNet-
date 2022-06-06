@@ -42,35 +42,24 @@ x = x(1,:);
 
 %% VMD
 
-imfBad = vmd(x,'NumIMFs',4);
+imfBad = vmd(x,'NumIMFs',5);
 
-%% Show the estimated IF
-
-modo1 = imfBad(:,1);
-modo2 = imfBad(:,2);
-modo3 = imfBad(:,3);
-modo4 = imfBad(:,4);
-
-figure(1)
-subplot(2,2,1),spectrogram(modo1,hamming(120),[],[],Fs,'yaxis'),title("IMF_{1}");
-subplot(2,2,2),spectrogram(modo2,hamming(120),[],[],Fs,'yaxis'),title("IMF_{2}");
-subplot(2,2,3),spectrogram(modo3,hamming(120),[],[],Fs,'yaxis'),title("IMF_{3}");
-subplot(2,2,4),spectrogram(modo4,hamming(120),[],[],Fs,'yaxis'),title("IMF_{4}");
-%% EMD
-
-imfBad = emd(x,'MaxNumIMF',4);
-
-%% Show the estimated IF
+% Show the estimated IF
 
 modo1 = imfBad(:,1);
 modo2 = imfBad(:,2);
 modo3 = imfBad(:,3);
 modo4 = imfBad(:,4);
+modo5 = imfBad(:,5);
 
-figure(2),title("EMD")
-subplot(2,2,1),spectrogram(modo1,hamming(120),[],[],Fs,'yaxis'),title("IMF_{1}");
-subplot(2,2,2),spectrogram(modo2,hamming(120),[],[],Fs,'yaxis'),title("IMF_{2}");
-subplot(2,2,3),spectrogram(modo3,hamming(120),[],[],Fs,'yaxis'),title("IMF_{3}");
-subplot(2,2,4),spectrogram(modo4,hamming(120),[],[],Fs,'yaxis'),title("IMF_{4}");
+t = 0:1/Fs:10;
+t = t(1:end-1);
 
-segments = reshape(modo1,250,[]);
+figure(1),title("VMD")
+subplot(2,3,1),plot(t,modo1),title("IMF_{1}");
+subplot(2,3,2),plot(t,modo2),title("IMF_{2}");
+subplot(2,3,3),plot(t,modo3),title("IMF_{3}");
+subplot(2,3,4),plot(t,modo4),title("IMF_{4}");
+subplot(2,3,5),plot(t,modo5),title("IMF_{5}");
+
+

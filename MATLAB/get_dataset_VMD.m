@@ -22,13 +22,18 @@ function get_dataset_VMD(method)
             for rep = rep_i % El sujeto 2 solo tiene 5 repeticiones
                 x = preprocessing(subject,task,rep);
                 for chn=1:6
-                    segments = reshape(x(chn,:),500,[]);
-                    for seg = 1:5
-                        modes = vmd(segments(:,seg),"NumIMFs",4);
+                    segments = reshape(x(chn,:),2500/1,[]);
+                    for seg = 1:1
+                        modes = vmd(segments(:,seg));
+                        %y1 = segments(:,seg);
                         y = sum(modes,2);
                         cfs = wsst(y,Fs,'bump','VoicesPerOctave',12); % Transformada T-F seleccionada
                         im = ind2rgb(im2uint8(rescale(abs(cfs))),jet(128)); % Paleta RGB seleccionada
-                        get_dir_VMD(im,subject,method,task,rep,seg,chn)
+                        get_dir_VMD(im,subject,method,task,rep,seg,chn,0)
+                        %y2 = segments(:,seg)-modes(:,1);
+                        %cfs = wsst(y2,Fs,'bump','VoicesPerOctave',12); % Transformada T-F seleccionada
+                        %im = ind2rgb(im2uint8(rescale(abs(cfs))),jet(128)); % Paleta RGB seleccionada
+                        %get_dir_VMD(im,subject,method,task,rep,seg,chn,1)
                     end
                 end
             end

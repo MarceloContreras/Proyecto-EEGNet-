@@ -12,7 +12,7 @@ from tensorflow.keras.layers import Dense,\
                                     Flatten
 def EEGNet_model(num_class):
     """
-    Construye una EEGNet utilizando Tensorflow de forma secuencial.
+    Construye una EEGNet utilizando Tensorflow como objeto secuencial.
     
     Argumentos: num_class
     Output: EEGNet como modelo de Tensorflow.keras
